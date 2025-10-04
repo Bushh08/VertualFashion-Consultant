@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/static/css/buy.css">
+  <title>Vertual Fashion Consultant</title>
+ 
+</head>
+<body>
+
+  <header class="header">
+        <a class="logo" href="{{ url_for('index') }}">Virtual Fashion</a>
+
+        <nav class="nav">
+            <a href="{{ url_for('color_analysis') }}">Color Analysis</a>
+            
+        </nav>
+    </header>
+  <form method="POST" class="container">
+    <div class="form-section">
+      <h3>Contact Details</h2>
+      <label>Name*</label>
+      <input type="text" name="name" required>
+
+      <label>Mobile No*</label>
+      <input type="text" name="mobile" required>
+      <br>
+      <br>
+      <h3>Address</h2>
+      <label>Pin Code*</label>
+      <input type="text" name="pincode" required>
+
+      <label>Address (House No, Street, Area)*</label>
+      <textarea name="address" required></textarea>
+
+      <label>Locality / Town*</label>
+      <input type="text" name="town" required>
+
+      <div class="row">
+        <div>
+          <label>City / District*</label>
+          <input type="text" name="city" required>
+        </div>
+        <div>
+          <label>State*</label>
+          <input type="text" name="state" required>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="cancel-btn" onclick="window.history.back()">Cancel</button>
+        <button type="submit" class="save-btn">Save</button>
+      </div>
+    </div>
+
+   
+  </form>
+</body>
+</html>

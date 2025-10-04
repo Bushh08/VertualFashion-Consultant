@@ -1,0 +1,377 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f6f2f2;
+    color: rgb(82, 41, 1);
+    font-family: 'Poppins', sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.image-section {
+    flex: 1 1 400px;
+}
+
+.image-section img {
+    width: 300px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+
+.details {
+    flex: 1 1 400px;
+}
+
+.details h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #601f1fe7;
+    margin-top: 10px;
+}
+
+.tax-info {
+    color: green;
+    font-size: 0.9rem;
+}
+
+.sizes {
+    margin: 20px 0;
+}
+
+.sizes span {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 4px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.actions button {
+    padding: 14px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border: none;
+}
+
+.add-to-cart {
+    background: #600f0f;
+    color: #fff;
+}
+
+.wishlist {
+    border: 1px solid #ccc;
+    background: #faf8f9;
+    color: #333;
+}
+
+.actions button:hover {
+    transform: scale(1.05);
+}
+
+.description {
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(82, 41, 1);
+  padding: 15px 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Left side: Logo */
+.nav-left .logo {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Right side: links (Home, Cart, Wishlist) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between the links */
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: #fff9f9;
+  font-weight: bold;
+}
+
+/* Optional: underline on hover */
+.nav-right a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+.similar-items {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 40px;
+}
+
+.similar-items h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 1 1 calc(25% - 20px);
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #444;
+}
+
+.card .price {
+    font-weight: bold;
+    color: #e91e63;
+    margin-bottom: 10px;
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  background: #fff8fc;
+  padding: 40px 50px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(17, 8, 8, 0.12);
+    
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.card {
+  flex: 0 0 25%; /* 4 per row */
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.slider-btn {
+  background-color:#f3efef;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+.similar-items-horizontal {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .h-slider-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+  }
+  
+  .h-slider-btn {
+    background-color: #877f7f;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1;
+    
+  }
+  
+  .h-slider-container {
+    overflow-x: hidden;
+    flex: 1;
+  }
+  
+  .h-slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .h-card {
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 0 10px;
+    text-align: center;
+  }
+  
+  .h-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(17, 8, 8, 0.12);
+  }
+
+#desc-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.image-slider-section {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.slider-image-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.slider-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.slider-btn.left {
+  left: 10px;
+}
+
+.slider-btn.right {
+  right: 10px;
+}
+
+
+  /* Wrapper for action buttons */
+.actions {
+  display: flex;
+  justify-content:left;  /* Align items to left and right */
+  width: 100%;  /* Full width container */
+  margin-top: 20px;  /* Space between buttons and other content */
+}
+
+/* Action Buttons */
+.add-to-cart, .wishlist {
+  background-color: #6b0f16; /* Orange background */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  width: 200px;
+  font-family: inherit;
+}
+
+.add-to-cart:hover, .wishlist:hover {
+  background-color: #4e0910; /* Darker orange on hover */
+  transform: scale(1.05); /* Slightly enlarges the button */
+}
+
+/* Wishlist button special style */
+.wishlist {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.wishlist:hover {
+  background-color: #6b0f16;; /* Orange background on hover */
+  color: white;
+  border-color: #6b0f16;
+  font-family: inherit;
+  
+}
+
+  

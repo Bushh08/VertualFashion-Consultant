@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Fashion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color:rgb(82, 41, 1);
+            color: white;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .hero {
+            text-align: center;
+            background-color:rgb(245, 237, 228);
+            color: rgb(82, 41, 1);
+            padding: 80px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .join-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            color:white;
+            background-color: rgb(82, 41, 1);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .join-btn:hover {
+            background-color:rgb(199, 184, 151);
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            padding: 60px 40px;
+            background-color:rgb(245, 237, 228);
+        }
+        .text-section {
+            flex: 1;
+            padding-right: 40px;
+        }
+        .text-section h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px; 
+            color:rgb(82, 41, 1);
+
+        }
+        .text-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .image-section {
+            flex: 1;
+            text-align: center;
+        }
+        .image-section img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color:rgb(255, 90, 137);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight:;
+        }
+        .cta-btn:hover {
+            background-color:rgb(255, 90, 137);
+        }
+        .number {
+            font-size: 100px; /* Adjust as needed */
+            font-weight: bold;
+        }
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background-color:rgb(242, 229, 223);
+        }
+        .section img {
+            max-width: 45%;
+            border-radius: 10px;
+        }
+        .section-text {
+            max-width: 50%;
+        }
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .section p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .active {
+            display: block;
+        }
+        .front-page {
+            text-align: center;
+            padding: 50px;
+            background-color:rgb(245, 237, 228);
+        }
+        .front-page h1 {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .front-page p {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 30px;
+        }
+        .outfit-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .outfit-images img {
+            width: 250px;
+            border-radius: 10px;
+        }
+        .container {
+            padding: 50px 20px;
+            text-align: center;
+            background-color:rgb(245, 237, 228);
+
+        }
+        .container h1 {
+            font-size: 36px;
+            color: #333;
+            text-align: center;
+        }
+        .container p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #666;
+            text-align: center;
+        }
+        .button {
+            background: rgb(82, 41, 1);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 40px 10%;
+            background-color:rgb(245, 237, 228);
+            
+        }
+        .step {
+            text-align: center;
+            max-width: 250px;
+            hight:550px;
+        }
+        .download-btn {
+            background-color: #f04f4f;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+           
+    </style>
+</head>
+<body>
+    <header class="header" <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <a href="{{ url_for('index') }}" >Virtual Fashion</a>
+        <nav class="nav">
+           
+            <a href="{{ url_for('color_analysis') }}" >Color Analysis</a>
+           
+            <a href="{{ url_for('Figure') }}" >Figure and Fit</a>
+        </nav>
+    </header>
+    </div>
+    <section class="hero" <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <h1 >Figure & Fit</h1>
+        <p>Do you often struggle to find the perfect jeans or a dress that flatters your shape? We’ll help you to accentuate and celebrate your body with detailed advice for the styles, fits and fabrics that suit your body best, making shopping online and in-store more pleasurable and fun</p>
+    
+        <a href="#" class="join-btn">Join Now →</a>
+    </section>
+    <section class="content">
+        <div class="text-section">
+            
+            <h2 <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+                Figure & Fit</h2>
+            <p <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">Struggling to find the perfect jeans? Can’t find a dress that flatters your figure? We’ll help you to celebrate your curves by advising you on the styles, fits and fabrics that work best for you. The perfect recipe for hassle-free shopping in-store or online.</p>
+            
+        </div>
+        <div class="image-section">
+            <img src="static/19.avif" alt="Face Recognition AI" height="550" width="150" >
+        </div>
+    </section>
+    <section class="section">
+        <img src="static/18.jpg" alt="Maximize Wardrobe" height="550">
+        <div class="section-text" <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+            
+            <h2 >Body</h2>
+            <p>Fashions fade, style is eternal. To look and feel your best, you need to choose clothes that truly flatter your figure. It’s the only way to create a striking first impression that maximizes your looks.</p>
+            <br>
+            
+        </div>
+    </section>
+    <section class="content">
+        <div class="text-section">
+            
+            <h2 <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+                Style Results</h2>
+            <p <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">Learn to understand your silhouette and how to truly maximize your figure. We’ll provide you with a range of tailored style tips to help you make the most of your wardrobe. Simply explore this section to receive bespoke styling advice wherever you are, within a matter of seconds.</p>
+            
+        </div>
+        <div class="image-section">
+            <img src="static/17.jpg" alt="Face Recognition AI" height="550" width="350" >
+        </div>
+    </section>
+    <section class="section">
+        <img src="static/16.jpg" alt="Maximize Wardrobe" height="650" width="450">
+        <div class="section-text" <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+            
+            <h2 >4.
+                Outfits by Сolor type</h2>
+            <p>When you’re working on your wardrobe, it’s important to understand your own personal style. There’s no point copying trends you’ve seen elsewhere: it’s all about finding an aesthetic that enhances your beauty and works for your lifestyle.</p>
+            <br>
+            
+        </div>
+    </section>
+
+
+</body>
+</html>
+

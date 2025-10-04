@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Wishlist | Fashion Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='wish.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+     <header class="header">
+       <a class="logo" href="{{ url_for('index') }}">Fashion Consultant</a>
+        <nav class="nav">
+            <a href="{{ url_for('color_analysis') }}">Color Analysis</a>
+           
+
+            
+        </nav>
+    </header>
+    <h1>Your Wishlist</h1>
+
+
+  <div class="container">
+    {% for item in wishlist %}
+        <div class="item-card">
+            <img src="{{ item.image_url }}" alt="{{ item.name }}">
+            <div class="item-details">
+                <h3>{{ item.name }}</h3>
+                <p>Category: {{ item.category }}</p>
+                <p>{{ item.description }}</p>
+                <p>Price: ₹{{ item.price }}</p>
+
+                <form action="{{ url_for('remove_from_wishlist') }}" method="post" style="display: inline;">
+                    <input type="hidden" name="name" value="{{ item.name }}">
+                    <button type="submit">Remove from Wishlist</button>
+                </form>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+    <!-- Back Button -->
+<div class="back-button-container">
+    <a href="{{ url_for('recommendation') }}" class="back-button">← Back to Home</a>
+</div>
+
+</body>
+</html>

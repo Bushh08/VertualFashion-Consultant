@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personalized Recommendations</title>
+    <link rel="stylesheet" href="/static/css/rstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+     <header class="header">
+        <a class="logo" href="{{ url_for('index') }}">Virtual Fashion</a>
+
+        <nav class="nav">
+            <a href="{{ url_for('color_analysis') }}">Color Analysis</a>
+            
+        </nav>
+    </header>
+    <div class="container">
+        <h1>👋 Personalized Recommendations</h1>
+        <h2>Detected Skin Tone: <strong>{{ skin_tone }}</strong></h2>
+
+        <h3>🎨 Suggested Colors:</h3>
+        <ul class="color-list">
+            {% for color in colors %}
+                <li>{{ color }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3> Suggested Clothes:</h3>
+        <ul class="cloth-list">
+            {% for item in clothes %}
+    <li class="cloth-item">
+        <a href="{{ url_for('clothing_detail', item_id=item.id) }}">
+            <img src="{{ item.image_url }}" alt="{{ item.name }}">
+        </a>
+        
+        <p>{{ item.category }}</p>
+    </li>
+{% endfor %}
+
+        </ul>
+
+        <a class="back-btn" href="{{ url_for('index') }}">← Back to Home</a>
+    </div>
+</body>
+</html>

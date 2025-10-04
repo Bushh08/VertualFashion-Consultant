@@ -1,0 +1,138 @@
+<header class="header">
+    <a class="logo" href="{{ url_for('index') }}">Virtual Fashion</a>
+    <nav class="nav-links">
+        <a href="{{ url_for('color_analysis') }}">Color Analysis</a>
+        <a href="{{ url_for('chat') }}">Fashion Chatbot</a>
+    </nav>
+</header>
+
+<div class="chat-container">
+    <h2> Welcome to Fashion Chatbot! Ready to discover your next stylish look?</h2>
+    <div id="chat-box"></div>
+    
+    <div class="chat-input-area">
+        <input type="text" id="user-input" placeholder="Ask about fashion, body shape, or skin tone..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<style>
+    
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgb(82, 41, 1);
+    color: white;
+}
+
+.logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffcc70;
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 20px;         /* Adjust position from bottom */
+    left: 50%;             /* Center horizontally */
+    transform: translateX(-50%); /* Center trick */
+    
+    width: 700px;          /* Increased width */
+    height: 400px;         /* Increased height */
+    
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-box {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+}
+
+#chat-box div {
+    margin: 5px 0;
+}
+
+#user-input {
+    padding: 10px;
+    font-size: 14px;
+    width: calc(100% - 80px); /* Adjust width with button */
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+
+
+<script>
+function sendMessage() {
+    const input = document.getElementById("user-input");
+    const message = input.value.trim();
+    if (!message) return;
+
+    const chatBox = document.getElementById("chat-box");
+    chatBox.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+    input.value = "";
+
+    fetch("/chatbot", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: message })
+    })
+    .then(res => res.json())
+    .then(data => {
+        chatBox.innerHTML += `<div><strong>Bot:</strong> ${data.response}</div>`;
+        chatBox.scrollTop = chatBox.scrollHeight;
+    });
+}
+</script>

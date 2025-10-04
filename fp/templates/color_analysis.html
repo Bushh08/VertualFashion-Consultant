@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Fashion</title>
+    <link rel="stylesheet" href="/static/css/color.css">
+</head>
+<body> <header class="header" >
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <a class="logo" href="{{ url_for('index') }}">Virtual Fashion</a>
+        
+
+        <nav class="nav">
+           
+            <a href="{{ url_for('color_analysis') }}" >Color Analysis</a>
+             
+            
+            
+        </nav>
+    </header>
+    </div>
+    <section class="hero" <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <h1 >Color Analysis</h1>
+        <p>One selfie is all it takes for our smart science to analyze your unique features and reveal the colors that enhance your natural beauty. Get your personal color palette.<br>
+           Unsure about buying a specific item? Need wardrobe updates or personalized clothing suggestions?</p>
+    
+         <!-- Start Camera Button visible on webpage -->
+    <section class="webcam-container" style="text-align: center; margin-top: 50px;">
+        <h2>Click the button below to check your skintone and color palette</h2>
+        <button class="camera-btn" onclick="openModal()">Start Camera</button>
+    </section>
+
+    <!-- Webcam Modal -->
+    <div id="cameraModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Real-Time Skin Tone Detection</h2>
+            <img id="video_feed" src="" alt="Webcam Feed">
+            <br>
+            <button class="camera-btn" onclick="startCamera()">Start Camera</button>
+            <!-- Inside #cameraModal div -->
+<button class="camera-btn" onclick="window.location.href='/recommendation'" style="margin-top: 10px;">
+    Get Color & Cloth Recommendation
+</button>
+
+            
+        </div>
+    </div>
+
+    <script>
+        // Open Modal
+        function openModal() {
+            document.getElementById("cameraModal").style.display = "block";
+        }
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById("cameraModal").style.display = "none";
+        }
+
+        // Start Camera Feed
+        function startCamera() {
+            document.getElementById("video_feed").src = "/video_feed"; // Assuming this is the video feed URL
+        }
+
+        // Close the modal if clicked outside of it
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("cameraModal")) {
+                closeModal();
+            }
+        }
+    </script>
+    </section>
+
+    <section class="content">
+        <div class="text-section">
+            
+            <h2 <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+                1. Color Analysis</h2>
+            <p <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">You’re one selfie away from seeing your personalized color palette. Our smart science will analyze your features and reveal the colors that will best enhance your natural beauty.</p>
+            
+        </div>
+        <div class="image-section">
+            <img src="static/13.png" alt="Face Recognition AI" height="550" width="250" >
+        </div>
+    </section>
+    <section class="section">
+        <img src="static/colour.webp" alt="Maximize Wardrobe" height="450" width="450">
+        <div class="section-text" <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+            
+            <h2 >2. Color temperature</h2>
+            <p>Explore the right shades for you, considering the temperature (warm – cold), depth (light – dark) and saturation (bright – soft) of each hue.</p>
+            <br>
+            
+        </div>
+    </section>
+    <section class="content">
+        <div class="text-section">
+            
+            <h2 <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+                3. Color type palette</h2>
+            <p <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">Once your color type is determined your color type, you’ll be able to explore your color palette. These hues are perfect for dressing the top half of the body – think blouses, sweaters, tops and dresses.</p>
+            
+        </div>
+        <div class="image-section">
+            <img src="static/12.jpg" alt="Face Recognition AI" height="550" width="350" >
+        </div>
+    </section>
+    <section class="section">
+        <img src="static/16.jpg" alt="Maximize Wardrobe" height="650" width="450">
+        <div class="section-text" <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+            
+            <h2 >4.
+                Outfits by Сolor type</h2>
+            <p>When you’re working on your wardrobe, it’s important to understand your own personal style. There’s no point copying trends you’ve seen elsewhere: it’s all about finding an aesthetic that enhances your beauty and works for your lifestyle.</p>
+            <br>
+            
+        </div>
+    </section>
+   
+
+
+</body>
+</html>
+

@@ -1,0 +1,154 @@
+
+
+/* General reset and font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+    
+}
+
+/* Header and Navbar */
+.header {
+    background-color: rgb(82, 41, 1);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none; /* remove underline */
+    cursor: pointer;
+}
+
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #ffcc70;
+}
+
+
+.container {
+    max-width: 900px;
+    margin: 60px auto 30px; /* 60px top margin added */
+    background-color: #fcfcfc;
+    padding: 40px 50px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(23, 11, 11, 0.12);
+    transition: all 0.3s ease;
+}
+
+
+h1 {
+    color: #510f0f;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: 500;
+    color:#510f0f;
+    margin-bottom: 30px;
+}
+
+h3 {
+    margin-top: 40px;
+    color: #510f0f;
+    font-size: 1.5rem;
+}
+
+.color-list, .cloth-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.color-list li, .cloth-list li {
+    padding: 12px 20px;
+    border-radius: 14px;
+    background: #fff;
+    font-weight: 500;
+    border: 2px solid #d4c0c0;
+    box-shadow: 2px 4px 12px rgba(108, 15, 95, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.color-list li:hover, .cloth-list li:hover {
+    transform: scale(1.06);
+    box-shadow: 2px 6px 18px rgba(108, 15, 95, 0.1);
+}
+
+a.back-btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 12px 24px;
+    background: #420909;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 6px 16px rgba(108, 15, 95, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-family: inherit;
+}
+
+a.back-btn:hover {
+    background: #5a0d0d;
+    transform: scale(1.05);
+}
+
+strong {
+    background: #f7f3f4;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+.cloth-item {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cloth-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cloth-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    width: 80px;
+}
+
+.cloth-item:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.1);
+}

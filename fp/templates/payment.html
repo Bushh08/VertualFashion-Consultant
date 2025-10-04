@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Payment Method</title>
+  <link rel="stylesheet" href="/static/css/pay.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+        <a class="logo" href="{{ url_for('index') }}">Virtual Fashion</a>
+
+        <nav class="nav">
+            <a href="{{ url_for('color_analysis') }}">Color Analysis</a>
+            
+        </nav>
+    </header>
+  <form class="payment-container" method="POST">
+    <h2>Select Payment Method</h2>
+    
+    <label for="payment_method">Choose a payment option:</label>
+    <select name="payment_method" id="payment_method" required>
+      <option value="" disabled selected>Select</option>
+      <option value="Cash on Delivery">Cash on Delivery</option>
+      <option value="UPI / Net Banking">UPI / Net Banking</option>
+      <option value="Credit/Debit Card">Credit/Debit Card</option>
+    </select>
+
+    <button type="submit">Place Order</button>
+  </form>
+</body>
+</html>

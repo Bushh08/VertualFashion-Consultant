@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ clothing_item['clothing_name'] }} | Fashion Consultant</title>
+  
+   <link rel="stylesheet" href="/static/css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+<!-- Navigation Section -->
+<div class="navbar">
+  <div class="nav-left">
+    <a class="logo" href="{{ url_for('index') }}">Fashion Consultant</a>
+  </div>
+  <div class="nav-right">
+    <a href="{{ url_for('recommendation') }}">Back To Home</a>
+    <a href="/cart">🛒 Cart</a>
+    <a href="/wishlist">🤍 Wishlist</a>
+  
+
+  <
+    {% if 'username' in session %}
+      <span class="welcome-text">Welcome, {{ session['username'] }}</span>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+  
+      <a href="{{ url_for('login') }}">Login</a>
+    {% endif %}
+ </div>
+</div>
+
+
+  
+<div class="main">
+  <div class="image-section">
+      <img src="{{ clothing_item['clothing_image_url'] }}" alt="{{ clothing_item['clothing_name'] }}">
+  </div>
+
+  
+
+
+    <div class="details">
+        <h1>{{ clothing_item['clothing_name'] }}</h1>
+        <div class="price">₹{{ clothing_item['price'] }}</div>
+        <div class="tax-info">Inclusive of all taxes</div>
+
+        <div class="sizes">
+            <strong>Select Size:</strong><br>
+            <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
+        </div>
+
+<!-- Action Buttons -->
+<div class="actions">
+  {% if 'username' in session %}
+  <!-- Logged-in user: Normal form -->
+  <form action="{{ url_for('add_to_cart') }}" method="post">
+      <input type="hidden" name="name" value="{{ clothing_item['clothing_name'] }}">
+      <input type="hidden" name="price" value="{{ clothing_item['price'] }}">
+      <input type="hidden" name="image_url" value="{{ clothing_item['clothing_image_url'] }}">
+      <input type="hidden" name="description" value="{{ clothing_item['description'] }}">
+      <input type="hidden" name="category" value="{{ clothing_item['category'] }}">
+      <button class="add-to-cart">🛒 ADD TO BAG</button>
+  </form>
+  {% else %}
+  <!-- Guest user: Show alert on click -->
+  <button class="add-to-cart" onclick="alert('Please login first to add items to your bag'); window.location.href='{{ url_for('login') }}'; return false;">🛒 ADD TO BAG</button>
+  {% endif %}
+
+  {% if 'username' in session %}
+  <form action="{{ url_for('add_to_wishlist') }}" method="post">
+      <input type="hidden" name="name" value="{{ clothing_item['clothing_name'] }}">
+      <input type="hidden" name="price" value="{{ clothing_item['price'] }}">
+      <input type="hidden" name="image_url" value="{{ clothing_item['clothing_image_url'] }}">
+      <input type="hidden" name="description" value="{{ clothing_item['description'] }}">
+      <input type="hidden" name="category" value="{{ clothing_item['category'] }}">
+      <button class="wishlist">🤍 WISHLIST</button>
+  </form>
+  {% else %}
+  <button class="wishlist" onclick="alert('Please login first to add items to your wishlist'); window.location.href='{{ url_for('login') }}'; return false;">🤍 WISHLIST</button>
+  {% endif %}
+</div>
+
+
+        <!-- Description -->
+        <div class="description">
+            <strong>Product Description:</strong><br>
+            <span id="desc-text">{{ clothing_item['description'] }}</span>
+            <br><a id="read-more-toggle">Read more</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const descText = document.getElementById("desc-text");
+    const readToggle = document.getElementById("read-more-toggle");
+    let isExpanded = false;
+
+    readToggle.onclick = function () {
+        isExpanded = !isExpanded;
+        if (isExpanded) {
+            descText.style.webkitLineClamp = 'unset';
+            readToggle.textContent = 'Read less';
+        } else {
+            descText.style.webkitLineClamp = '2';
+            readToggle.textContent = 'Read more';
+        }
+    };
+</script>
+
+<div class="similar-items-horizontal">
+    <h2>You Might Also Like</h2>
+    <div class="h-slider-wrapper">
+      <button class="h-slider-btn left" onclick="slideHorizontal(-1)">&#9664;</button>
+      <div class="h-slider-container" id="h-slider-container">
+        <div class="h-slider-track" id="h-slider-track">
+          {% for item in similar_items %}
+          <div class="h-card">
+            <a href="{{ url_for('clothing_detail', item_id=item.clothing_name.replace(' ', '_')) }}">
+              <img src="{{ item.clothing_image_url }}" alt="{{ item.clothing_name }}">
+            </a>
+            <h3>{{ item.clothing_name }}</h3>
+            
+          </div>
+        {% endfor %}
+        
+
+        </div>
+      </div>
+      <button class="h-slider-btn right" onclick="slideHorizontal(1)">&#9654;</button>
+    </div>
+  </div>
+  <script>
+    let hScroll = 0;
+    const hTrack = document.getElementById('h-slider-track');
+    const hCardWidth = 220; // width (200px) + margin (20px)
+  
+    function slideHorizontal(direction) {
+      hScroll += direction * hCardWidth * 2; // scroll by 2 cards each time
+      const maxScroll = hTrack.scrollWidth - document.getElementById('h-slider-container').offsetWidth;
+      if (hScroll < 0) hScroll = 0;
+      if (hScroll > maxScroll) hScroll = maxScroll;
+  
+      hTrack.style.transform = `translateX(-${hScroll}px)`;
+    }
+  
+    window.addEventListener("resize", () => {
+      slideHorizontal(0); // reset on resize
+    });
+  </script>
+    
+    
+     
+</body>
+</html>

@@ -1,0 +1,11 @@
+OrderID,Name,Mobile,PinCode,Address,Town,City,State,PaymentMethod,ItemName,Price,Quantity,TotalAmount
+1746896876,,,,,,,,Cash on Delivery,Cotton Top,399,1,399
+1746896921,Bushra Momin,07024392896,-470002,Shukrwari Ward,-sagar,-sagar,mp,Cash on Delivery,Cotton Top,399,1,399
+1747037249,Bushra Momin,07024392896,-470002,Shukrwari Ward 12,-sagar,-sagar,mp,Credit/Debit Card,Green Self-Design Round-Neck Pure Cotton Top With Trouser,899.0,1,899.0
+1747037477,Bushra Momin,07024392896,-470002,Shukrwari Ward 12,-sagar,-sagar,mp,UPI / Net Banking,Green Self-Design Round-Neck Pure Cotton Top With Trouser,899.0,1,899.0
+1747040591,Bushra Momin,07024392896,-470002,Shukrwari Ward,-sagar,-sagar,mp,Cash on Delivery, Relaxed Fit Travel Dress,1999.0,1,1999.0
+1748528345,jo,987763890,-470002,city,-sagar,-sagar,mp,UPI / Net Banking,Summer Dress,1800.0,1,1800.0
+1750168559,jack,07023456720,-470002,abc,bhoapl,bhoapl,mp,Cash on Delivery,Green A-Line Dress,1700.0,1,1700.0
+1750168559,jack,07023456720,-470002,abc,bhoapl,bhoapl,mp,Cash on Delivery,Summer Dress,1800.0,1,1800.0
+1750168559,jack,07023456720,-470002,abc,bhoapl,bhoapl,mp,Cash on Delivery,Pastel Yellow Dress,1599.0,1,1599.0
+1750237795,jack,07023456720,-470002,saga,bhoapl,bhoapl,mp,UPI / Net Banking,Kurta Plazu,3000.0,1,3000.0

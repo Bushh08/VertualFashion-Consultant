@@ -1,0 +1,153 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+/* Header and Navbar */
+.header {
+    background-color: rgb(82, 41, 1);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #ffcc70;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #390808;
+    margin: 40px 0 30px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.item-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.item-card img {
+    border-radius: 8px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.item-details {
+    flex: 1;
+    text-align: left;
+}
+
+.item-details h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #34495e;
+}
+
+.item-details p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Button Styles */
+button {
+    background-color: #420f09;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+/* Empty Wishlist Text */
+p.empty {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .item-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item-card img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .item-details {
+        text-align: center;
+    }
+}
+
+.back-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-button {
+    display: inline-block;
+    background-color: #34495e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #2c3e50;
+}
+
